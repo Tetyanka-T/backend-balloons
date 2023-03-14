@@ -1,26 +1,32 @@
 const express = require("express");
+const logger = require("morgan");
 const cors = require("cors");
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
 
+const balloonsRouter = require("./routes/api/balloons");
 const app = express();
 
-app.use(cors());
-dotenv.config();
-const { DB_HOST } = process.env;
-mongoose
-  .connect(DB_HOST, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Connect");
-  })
-  .catch((error) => {
-    console.log(error.message);
-  });
+const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
-app.get("/", (request, response) => {
-  response.json();
+app.use(logger(formatsLogger));
+app.use(cors());
+app.use(express.json());
+
+const { Balloon } = require("./models");
+const { DB_HOST } = process.env;
+
+app.use("/api/balloons", balloonsRouter);
+// app.use("/api/orders", ordersRouter);
+
+app.use((req, res) => {
+  res.status(404).json({
+    status: "error",
+    message: "Not found",
+  });
 });
-app.listen(3003);
+
+app.use((req, res) => {
+  const { status = 500, message = "Server error" } = err;
+  res.status(status).json({ message });
+});
+
+module.exports = app;

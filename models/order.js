@@ -7,6 +7,23 @@ const controlEmail = "";
 
 const orderSchema = Schema(
   {
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: "admin",
+    },
+    basket: [
+      {
+        balloon: {
+          type: Schema.Types.ObjectId,
+          ref: "balloon",
+          require: true,
+        },
+        quantite: {
+          type: Number,
+          default: 1,
+        },
+      },
+    ],
     userName: {
       type: String,
       require: [true, "Ім'я обов'язкове"],
@@ -47,26 +64,6 @@ const orderSchema = Schema(
       require: [true, "Вкажіть Ваш будинок"],
     },
     deliveryAppartment: Number,
-    basket: {
-      idBalloon: {
-        type: String,
-        require: [true, "Id композиції обов'язкове"],
-      },
-      priceBalloon: {
-        type: Number,
-        require: [true, "Ціна обов'язкова"],
-        min: 0.01,
-      },
-      // photoBalloon: {
-      //   type: String,
-      //   require: [true, "Посилання на фото композиції обов'язкове"],
-      // },
-      codeBalloon: {
-        type: String,
-        require: [true, "Артикул обов'язковий"],
-      },
-    },
-
     statusOrder: {
       type: String,
       default: "новий",
@@ -86,12 +83,12 @@ const joiSchema = Joi.object({
   deliveryHause: Joi.string(),
   deliveryAppartment: Joi.number(),
   callBack: Joi.boolean(),
-  basket: {
-    idBalloon: Joi.string().required(),
-    priceBalloon: Joi.number().min(0.01).required(),
-    // photoBalloon: Joi.string().required(),
-    codeBalloon: Joi.string().required(),
-  },
+  basket: [
+    {
+      balloon: Joi.string().required(),
+      quantite: Joi.number().required(),
+    },
+  ],
   statusOrder: Joi.string(),
 });
 

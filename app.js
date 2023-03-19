@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const balloonsRouter = require("./routes/api/balloons");
 const ordersRouter = require("./routes/api/orders");
+const authRouter = require("./routes/api/auth");
 const app = express();
 
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
@@ -12,8 +13,9 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/balloons", balloonsRouter);
-app.use("/api/orders", ordersRouter);
+app.use("/api/v1/balloons", balloonsRouter);
+app.use("/api/v1/orders", ordersRouter);
+app.use("/api/v1/auth", authRouter);
 
 app.use((req, res) => {
   res.status(404).json({

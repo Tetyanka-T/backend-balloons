@@ -1,10 +1,6 @@
 const { Schema, model } = require("mongoose");
 const Joi = require("joi");
 
-const controlPhoneNumber =
-  "((+38)?(?d{3})?[s.-]?(d{7}|d{3}[s.-]d{2}[s.-]d{2}|d{3}-d{4}))";
-const controlEmail = "";
-
 const orderSchema = Schema(
   {
     owner: {
@@ -32,12 +28,10 @@ const orderSchema = Schema(
     userPhone: {
       type: Number,
       require: [true, "Телефон обов'язковий"],
-      // match: { controlPhoneNumber },
     },
     userEmail: {
       type: String,
       require: [true, "Email обов'язковий"],
-      // match: { controlEmail },
     },
     deliveryDate: {
       type: String,
@@ -64,6 +58,7 @@ const orderSchema = Schema(
       require: [true, "Вкажіть Ваш будинок"],
     },
     deliveryAppartment: Number,
+    comment: String,
     statusOrder: {
       type: String,
       default: "новий",
@@ -83,6 +78,7 @@ const joiSchema = Joi.object({
   deliveryHause: Joi.string(),
   deliveryAppartment: Joi.number(),
   callBack: Joi.boolean(),
+  comment: Joi.string(),
   basket: [
     {
       balloon: Joi.string().required(),

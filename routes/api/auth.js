@@ -18,5 +18,6 @@ router.post(
 router.post("/login", validation(joiSchema), controllerWrapper(ctrl.login));
 
 router.get("/logout", verifyToken, controllerWrapper(ctrl.logout));
+router.get("/current", verifyToken, controllerWrapper(ctrl.current));
 
 module.exports = router;

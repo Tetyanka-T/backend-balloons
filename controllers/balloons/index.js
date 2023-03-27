@@ -4,6 +4,7 @@ const addBalloon = require("./addBalloon");
 const deleteBalloon = require("./deleteBalloon");
 const updateById = require("./updateById");
 const updatePriceAll = require("./updatePriceAll");
+const paginatedResults = require("./paginatedResults");
 
 module.exports = {
   getAll,
@@ -12,4 +13,5 @@ module.exports = {
   deleteBalloon,
   updateById,
   updatePriceAll,
+  paginatedResults,
 };

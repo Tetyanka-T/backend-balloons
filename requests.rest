@@ -1,0 +1,1 @@
+GET http://localhost:5555/api/balloons/paginate?page=1&limit=10

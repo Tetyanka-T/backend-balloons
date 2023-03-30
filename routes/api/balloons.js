@@ -6,6 +6,26 @@ const { controllerWrapper, validation } = require("../../middlewares");
 const router = express.Router();
 
 router.get("/", controllerWrapper(ctrl.getAll));
+router.get("/paginate", async (req, res) => {
+  const { page, limit } = req.query;
+
+  try {
+    const balloons = await Balloon.find()
+      .limit(limit * 1)
+      .skip((page - 1) * limit)
+      .exec();
+
+    const count = await Balloon.count();
+
+    res.json({
+      balloons,
+      totalPages: Math.ceil(count / limit),
+      currentPage: page,
+    });
+  } catch (err) {
+    console.error(err.message);
+  }
+});
 
 router.get("/:balloonId", controllerWrapper(ctrl.getBalloonById));
 
@@ -18,15 +38,5 @@ router.put(
 );
 
 router.delete("/:balloonId", controllerWrapper(ctrl.deleteBalloon));
-// router.get("/paginate", controllerWrapper(ctrl.paginatedResults));
 
-// router.get("/paginate", (res, req) => {
-//   const page = req.query.page;
-//   const limit = req.query.limit;
-//   const startIndex = (page - 1) * limit;
-//   const endIndex = page * limit;
-//   const results = {};
-//   results.results = Balloon.slice(startIndex, endIndex);
-//   res.json(results);
-// });
 module.exports = router;

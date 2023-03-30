@@ -1,27 +1,27 @@
 const { Balloon } = require("../../models");
 
-const paginatedResults = async (req, res) => {
+const paginatedResults = async (res, req) => {
   const { page, limit } = req.query;
 
   const startIndex = (page - 1) * limit;
   const endIndex = page * limit;
+  const results = {};
 
-  if (endIndex < Balloon.length) {
-    result.next = {
+  if (endIndex < (await Balloon.countDocuments().exec()))
+    results.next = {
       page: page + 1,
       limit: limit,
     };
-  }
 
   if (startIndex > 0) {
-    result.previous = {
+    results.previous = {
       page: page - 1,
       limit: limit,
     };
   }
 
-  const result = Balloon.slice(startIndex, endIndex);
-
-  res.json(result);
+  results.results = await Balloon.find().limit(limit).skip(startIndex).exec();
+  res.paginatedResults = results;
 };
+
 module.exports = paginatedResults;

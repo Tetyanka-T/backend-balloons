@@ -33,10 +33,10 @@ const balloonSchema = Schema(
     },
     // вказуються основні слова за, який здійснюється фільтр
     filter: String,
-    imgSrc: {
-      type: String,
-      require: [true, "Посилання на фото композиції обов'язкове"],
-    },
+    // imgSrc: {
+    //   type: String,
+    //   require: [true, "Посилання на фото композиції обов'язкове"],
+    // },
   },
   { versionKey: false, timestamps: true }
 );
@@ -50,7 +50,7 @@ const joiSchema = Joi.object({
   price: Joi.number().min(0.01).required(),
   code: Joi.string().required(),
   filter: Joi.string(),
-  imgSrc: Joi.string().required(),
+  // imgSrc: Joi.string().required(),
 });
 
 const Balloon = model("balloon", balloonSchema);

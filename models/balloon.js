@@ -6,7 +6,6 @@ const balloonSchema = Schema(
     name: {
       type: String,
       require: [true, "Назва композиції обов'язкова"],
-      minlength: 2,
     },
     category: {
       type: String,
@@ -42,7 +41,7 @@ const balloonSchema = Schema(
 );
 
 const joiSchema = Joi.object({
-  name: Joi.string().min(2).required(),
+  name: Joi.string().required(),
   category: Joi.string().required(),
   grup: Joi.string(),
   gender: Joi.string().required(),

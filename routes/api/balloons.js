@@ -33,7 +33,7 @@ router.post("/", validation(joiSchema), controllerWrapper(ctrl.addBalloon));
 
 router.put(
   "/:balloonId",
-  validation(joiSchema),
+  // validation(joiSchema),
   controllerWrapper(ctrl.updateById)
 );
 

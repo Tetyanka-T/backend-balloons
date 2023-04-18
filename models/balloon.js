@@ -41,7 +41,7 @@ const balloonSchema = Schema(
 );
 
 const joiSchema = Joi.object({
-  name: Joi.string().required(),
+  // name: Joi.string().required(),
   category: Joi.string().required(),
   grup: Joi.string(),
   gender: Joi.string().required(),

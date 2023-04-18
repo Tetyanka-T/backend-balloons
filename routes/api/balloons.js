@@ -29,7 +29,11 @@ router.get("/paginate", async (req, res) => {
 
 router.get("/:balloonId", controllerWrapper(ctrl.getBalloonById));
 
-router.post("/", validation(joiSchema), controllerWrapper(ctrl.addBalloon));
+router.post(
+  "/",
+  // validation(joiSchema),
+  controllerWrapper(ctrl.addBalloon)
+);
 
 router.put(
   "/:balloonId",

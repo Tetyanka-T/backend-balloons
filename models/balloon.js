@@ -41,15 +41,15 @@ const balloonSchema = Schema(
 );
 
 const joiSchema = Joi.object({
-  // name: Joi.string().required(),
-  // category: Joi.string().required(),
-  // grup: Joi.string(),
-  // gender: Joi.string().required(),
-  // description: Joi.string().required(),
-  // price: Joi.number().min(0.01).required(),
-  // code: Joi.string().required(),
-  // filter: Joi.string(),
-  // imgSrc: Joi.string().required(),
+  name: Joi.string().required(),
+  category: Joi.string().required(),
+  grup: Joi.string(),
+  gender: Joi.string().required(),
+  description: Joi.string().required(),
+  price: Joi.number().min(0.01).required(),
+  code: Joi.string().required(),
+  filter: Joi.string(),
+  imgSrc: Joi.string().required(),
 });
 
 const Balloon = model("balloon", balloonSchema);

@@ -14,7 +14,7 @@ const orderSchema = Schema(
           ref: "balloon",
           require: true,
         },
-        quantite: {
+        quantity: {
           type: Number,
           default: 1,
         },
@@ -33,7 +33,7 @@ const orderSchema = Schema(
       type: String,
       require: [true, "Email обов'язковий"],
     },
-    deliveryDate: {
+    deliveryHoliday: {
       type: String,
       require: [true, "Дата доставки обов'язкова"],
     },
@@ -46,18 +46,22 @@ const orderSchema = Schema(
       require: [true, "Час доставки обов'язковий"],
     },
     callBack: {
-      type: String,
+      type: Boolean,
       default: "ні",
     },
-    deliveryStreet: {
+    userAddress: {
       type: String,
-      require: [true, "Вкажіть Вашу вулицю"],
+      require: [true, "Вкажіть Вашу адресу"],
     },
-    deliveryHause: {
-      type: String,
-      require: [true, "Вкажіть Ваш будинок"],
-    },
-    deliveryAppartment: Number,
+    // deliveryStreet: {
+    //   type: String,
+    //   require: [true, "Вкажіть Вашу вулицю"],
+    // },
+    // deliveryHause: {
+    //   type: String,
+    //   require: [true, "Вкажіть Ваш будинок"],
+    // },
+    // deliveryAppartment: Number,
     comment: String,
     statusOrder: {
       type: String,
@@ -71,18 +75,19 @@ const joiSchema = Joi.object({
   userName: Joi.string().min(2).required(),
   userPhone: Joi.number().required(),
   userEmail: Joi.string().required(),
-  deliveryDate: Joi.string().required(),
+  deliveryHoliday: Joi.string().required(),
   deliveryMethod: Joi.string().required(),
   deliveryTime: Joi.string().required(),
-  deliveryStreet: Joi.string(),
-  deliveryHause: Joi.string(),
-  deliveryAppartment: Joi.number(),
+  userAddress: Joi.string().required(),
+  // deliveryStreet: Joi.string(),
+  // deliveryHause: Joi.string(),
+  // deliveryAppartment: Joi.number(),
   callBack: Joi.string(),
   comment: Joi.string(),
   basket: [
     {
       balloon: Joi.string().required(),
-      quantite: Joi.number().required(),
+      quantity: Joi.number().required(),
     },
   ],
   statusOrder: Joi.string(),

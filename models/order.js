@@ -33,7 +33,7 @@ const orderSchema = Schema(
       type: String,
       require: [true, "Email обов'язковий"],
     },
-    deliveryHoliday: {
+    deliveryDate: {
       type: String,
       require: [true, "Дата доставки обов'язкова"],
     },
@@ -72,7 +72,7 @@ const joiSchema = Joi.object({
   userName: Joi.string().min(2).required(),
   userPhone: Joi.number().required(),
   userEmail: Joi.string().required(),
-  deliveryHoliday: Joi.string().required(),
+  deliveryDate: Joi.string().required(),
   deliveryMethod: Joi.string().required(),
   deliveryTime: Joi.string().required(),
   userAddress: Joi.string(),

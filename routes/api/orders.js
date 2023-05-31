@@ -1,5 +1,6 @@
 const express = require("express");
-const { joiSchema, updateStatusJoiSchema } = require("../../models/order");
+// const { joiSchema, updateStatusJoiSchema } = require("../../models/order");
+const { updateStatusJoiSchema } = require("../../models/order");
 const { orders: ctrl } = require("../../controllers");
 const {
   controllerWrapper,

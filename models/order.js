@@ -98,6 +98,6 @@ const Order = model("order", orderSchema);
 
 module.exports = {
   Order,
-  joiSchema,
+  // joiSchema,
   updateStatusJoiSchema,
 };

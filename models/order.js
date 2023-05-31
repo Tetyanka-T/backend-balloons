@@ -49,10 +49,7 @@ const orderSchema = Schema(
       type: Boolean,
       default: "ні",
     },
-    userAddress: {
-      type: String,
-      require: [true, "Вкажіть Вашу адресу"],
-    },
+    userAddress: String,
     // deliveryStreet: {
     //   type: String,
     //   require: [true, "Вкажіть Вашу вулицю"],
@@ -78,7 +75,7 @@ const joiSchema = Joi.object({
   deliveryHoliday: Joi.string().required(),
   deliveryMethod: Joi.string().required(),
   deliveryTime: Joi.string().required(),
-  userAddress: Joi.string().required(),
+  userAddress: Joi.string(),
   // deliveryStreet: Joi.string(),
   // deliveryHause: Joi.string(),
   // deliveryAppartment: Joi.number(),

@@ -13,7 +13,8 @@ router.get("/", verifyToken, controllerWrapper(ctrl.getAll));
 
 // router.get("/:orderId", controllerWrapper(ctrl.getOrderById));
 
-router.post("/", validation(joiSchema), controllerWrapper(ctrl.addOrder));
+// router.post("/", validation(joiSchema), controllerWrapper(ctrl.addOrder));
+router.post("/", controllerWrapper(ctrl.addOrder));
 
 router.delete("/:orderId", controllerWrapper(ctrl.deleteOrder));
 

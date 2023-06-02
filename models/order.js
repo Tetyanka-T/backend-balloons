@@ -66,28 +66,28 @@ const orderSchema = Schema(
   { versionKey: false, timestamps: true }
 );
 
-const joiSchema = Joi.object({
-  numberOrder: Joi.string().required(),
-  userName: Joi.string().required(),
-  userPhone: Joi.number().required(),
-  userEmail: Joi.string().required(),
-  deliveryDate: Joi.string().required(),
-  deliveryMethod: Joi.string().required(),
-  deliveryTime: Joi.string().required(),
-  userAddress: Joi.string(),
-  // deliveryStreet: Joi.string(),
-  // deliveryHause: Joi.string(),
-  // deliveryAppartment: Joi.number(),
-  callBack: Joi.boolean(),
-  comment: Joi.string(),
-  basket: [
-    {
-      balloon: Joi.string().required(),
-      quantity: Joi.number().required(),
-    },
-  ],
-  statusOrder: Joi.string(),
-});
+// const joiSchema = Joi.object({
+//   numberOrder: Joi.string().required(),
+//   userName: Joi.string().required(),
+//   userPhone: Joi.number().required(),
+//   userEmail: Joi.string().required(),
+//   deliveryDate: Joi.string().required(),
+//   deliveryMethod: Joi.string().required(),
+//   deliveryTime: Joi.string().required(),
+//   userAddress: Joi.string(),
+//   // deliveryStreet: Joi.string(),
+//   // deliveryHause: Joi.string(),
+//   // deliveryAppartment: Joi.number(),
+//   callBack: Joi.boolean(),
+//   comment: Joi.string(),
+//   basket: [
+//     {
+//       balloon: Joi.string().required(),
+//       quantity: Joi.number().required(),
+//     },
+//   ],
+//   statusOrder: Joi.string(),
+// });
 
 const updateStatusJoiSchema = Joi.object({
   statusOrder: Joi.string().required(),
@@ -97,6 +97,6 @@ const Order = model("order", orderSchema);
 
 module.exports = {
   Order,
-  joiSchema,
+  // joiSchema,
   updateStatusJoiSchema,
 };

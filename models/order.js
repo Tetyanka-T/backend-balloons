@@ -20,7 +20,7 @@ const orderSchema = Schema(
         },
       },
     ],
-    numberOrder: Number,
+    numberOrder: String,
     userName: {
       type: String,
       require: [true, "Ім'я обов'язкове"],
@@ -70,7 +70,7 @@ const orderSchema = Schema(
 );
 
 const joiSchema = Joi.object({
-  numberOrder: Joi.number().required(),
+  numberOrder: Joi.string().required(),
   userName: Joi.string().required(),
   userPhone: Joi.number().required(),
   userEmail: Joi.string().required(),

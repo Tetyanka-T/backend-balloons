@@ -46,10 +46,7 @@ const orderSchema = Schema(
       type: String,
       require: [true, "Час доставки обов'язковий"],
     },
-    callBack: {
-      type: Boolean,
-      default: "ні",
-    },
+    callBack: Boolean,
     userAddress: String,
     // deliveryStreet: {
     //   type: String,
@@ -81,7 +78,7 @@ const joiSchema = Joi.object({
   // deliveryStreet: Joi.string(),
   // deliveryHause: Joi.string(),
   // deliveryAppartment: Joi.number(),
-  callBack: Joi.string(),
+  callBack: Joi.boolean(),
   comment: Joi.string(),
   basket: [
     {

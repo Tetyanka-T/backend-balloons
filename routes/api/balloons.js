@@ -6,6 +6,7 @@ const { controllerWrapper, validation } = require("../../middlewares");
 const router = express.Router();
 
 router.get("/", controllerWrapper(ctrl.getAll));
+
 router.get("/paginate", async (req, res) => {
   const { page, limit } = req.query;
 
@@ -29,11 +30,7 @@ router.get("/paginate", async (req, res) => {
 
 router.get("/:balloonId", controllerWrapper(ctrl.getBalloonById));
 
-router.post(
-  "/",
-  validation(joiSchema),
-  controllerWrapper(ctrl.addBalloon)
-);
+router.post("/", validation(joiSchema), controllerWrapper(ctrl.addBalloon));
 
 router.put(
   "/:balloonId",

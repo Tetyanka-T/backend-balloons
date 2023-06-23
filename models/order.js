@@ -18,6 +18,14 @@ const orderSchema = Schema(
           type: Number,
           default: 1,
         },
+        price: {
+          type: Number,
+          require: true,
+        },
+        amount: {
+          type: Number,
+          require: true,
+        },
       },
     ],
     numberOrder: String,

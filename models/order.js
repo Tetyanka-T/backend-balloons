@@ -22,10 +22,6 @@ const orderSchema = Schema(
           type: Number,
           require: true,
         },
-        amount: {
-          type: Number,
-          require: true,
-        },
       },
     ],
     numberOrder: String,

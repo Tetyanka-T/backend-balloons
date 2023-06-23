@@ -7,7 +7,17 @@ const addOrder = async (req, res) => {
   const email = {
     to: result.userEmail,
     subject: `Нове замовлення №${result.numberOrder}`,
-    html: `<h1>Добрий день ${result.userName} ми отримали ваше замовлення №${result.numberOrder}</h1>`,
+    html: `<h1>Вітаємо ${result.userName} ваше замовлення №${result.numberOrder}</h1>
+    <p>Дякуємо за ваше замовлення в інтернет-магазині <a href="veselavutivka.kr" target="_blank">veselavutivka.kr</a></p>
+    <p>Деталі замовлення:</p>
+    <ul>
+    <li>Спосіб доставки:${result.deliveryMethod}</li>
+    <li>Дата свята: ${result.deliveryDate}</li>
+    <li>Час доставки:${result.deliveryTime}</li>
+    <li>Адреса:${result.userAddress}</li>
+    <li>Коментарі до замовлення:${result.comment}</li>
+    </ul>
+    `,
   };
   await sendEmail(email);
   res.status(201).json({

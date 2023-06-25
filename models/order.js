@@ -9,21 +9,32 @@ const orderSchema = Schema(
     },
     basket: [
       {
-        balloon: {
-          type: Schema.Types.ObjectId,
-          ref: "balloon",
-          require: true,
-        },
-        quantity: {
-          type: Number,
-          default: 1,
-        },
-        price: {
-          type: Number,
-          require: true,
+        balloons: {
+          id: {
+            type: Schema.Types.ObjectId,
+            ref: "balloon",
+            require: true,
+          },
+          code: {
+            type: String,
+            require: true,
+          },
+          name: {
+            type: String,
+            require: true,
+          },
+          quantity: {
+            type: Number,
+            default: 1,
+          },
+          price: {
+            type: Number,
+            require: true,
+          },
         },
       },
     ],
+
     numberOrder: String,
     userName: {
       type: String,

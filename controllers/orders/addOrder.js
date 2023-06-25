@@ -6,8 +6,6 @@ const getBalloonById = require("../balloons/getBalloonById");
 const addOrder = async (req, res) => {
   const newOrder = req.body;
   const result = await Order.create(newOrder);
-
-  console.log(result);
   //   const email = {
   //     to: result.userEmail,
   //     subject: `Нове замовлення №${result.numberOrder}`,
@@ -29,11 +27,11 @@ const addOrder = async (req, res) => {
   //     `,
   //   };
   //   await sendEmail(email);
-  //   res.status(201).json({
-  //     status: "success",
-  //     code: 201,
-  //     data: result,
-  //   });
+  res.status(201).json({
+    status: "success",
+    code: 201,
+    data: result,
+  });
 };
 
 module.exports = addOrder;

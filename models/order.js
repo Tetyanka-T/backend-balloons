@@ -10,8 +10,12 @@ const orderSchema = Schema(
     basket: [
       {
         id: {
-          type: Schema.Types.ObjectId,
-          ref: "balloon",
+          type: String,
+          // ref: "balloon",
+          require: true,
+        },
+        img: {
+          type: String,
           require: true,
         },
         code: {

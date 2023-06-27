@@ -72,7 +72,9 @@ td {
 p {
   margin: 0;
 }
-
+ul, li {
+  list-style: none;
+}
 .ie-container table,
 .mso-container table {
   table-layout: fixed;
@@ -190,7 +192,7 @@ table, td { color: #7e8c8d; } #u_body a { color: #0000ee; text-decoration: under
   </div>
 </div>
 
-
+<ul>
 ${order.basket.map(
   (b) => `<li>
 <div class="u-row-container" style="padding: 0px;background-color: transparent">
@@ -259,6 +261,8 @@ ${order.basket.map(
 </div>
 </li>`
 )}
+</ul>
+
 
 
 

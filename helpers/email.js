@@ -192,9 +192,9 @@ table, td { color: #7e8c8d; } #u_body a { color: #0000ee; text-decoration: under
   </div>
 </div>
 
-<ul>
+
 ${order.basket.map(
-  (b) => `<li>
+  (b) => `<div>
 <div class="u-row-container" style="padding: 0px;background-color: transparent">
   <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
     <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
@@ -245,7 +245,6 @@ ${order.basket.map(
 <p style="line-height: 140%;"> </p>
 <p style="line-height: 140%;">${b.quantity}  Х  ${b.price} грн</p>
   </div>
-
       </td>
     </tr>
   </tbody>
@@ -259,12 +258,8 @@ ${order.basket.map(
     </div>
   </div>
 </div>
-</li>`
+</div>`
 )}
-</ul>
-
-
-
 
 <div class="u-row-container" style="padding: 0px;background-color: transparent">
   <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">

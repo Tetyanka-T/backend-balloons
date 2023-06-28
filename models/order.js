@@ -7,36 +7,41 @@ const orderSchema = Schema(
       type: Schema.Types.ObjectId,
       ref: "admin",
     },
-    basket: [
-      {
-        id: {
-          type: String,
-          // ref: "balloon",
-          require: true,
+    basket: {
+      balloons: [
+        {
+          id: {
+            type: String,
+            // ref: "balloon",
+            require: true,
+          },
+          img: {
+            type: String,
+            require: true,
+          },
+          code: {
+            type: String,
+            require: true,
+          },
+          name: {
+            type: String,
+            require: true,
+          },
+          quantity: {
+            type: Number,
+            default: 1,
+          },
+          price: {
+            type: Number,
+            require: true,
+          },
         },
-        img: {
-          type: String,
-          require: true,
-        },
-        code: {
-          type: String,
-          require: true,
-        },
-        name: {
-          type: String,
-          require: true,
-        },
-        quantity: {
-          type: Number,
-          default: 1,
-        },
-        price: {
-          type: Number,
-          require: true,
-        },
+      ],
+      amount: {
+        type: Number,
+        require: true,
       },
-    ],
-
+    },
     numberOrder: String,
     userName: {
       type: String,

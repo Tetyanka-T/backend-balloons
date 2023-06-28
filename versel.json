@@ -3,14 +3,14 @@
   "name": "backend-balloons",
   "builds": [
     {
-      "src": "bin/server.js",
+      "src": "./bin/server.js",
       "use": "@now/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "bin/server.js"
+      "dest": "./bin/server.js"
     }
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "name": "backend-balloons",
+  "builds": [
+    {
+      "src": "bin/server.js",
+      "use": "@versel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.js"
+    }
+  ]
+}

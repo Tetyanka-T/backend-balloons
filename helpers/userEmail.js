@@ -143,7 +143,7 @@ table, td { color: #7e8c8d; } #u_body a { color: #0000ee; text-decoration: under
         
   <h1 style="margin: 0px; line-height: 140%; text-align: left; word-wrap: break-word; font-size: 22px; font-weight: 400;">Вітаємо, ${
     order.userName
-  } ваше замовлення № ${order.numberOrder}</h1>
+  } ваше замовлення № ${order.numberOrder} прийнято в роботу</h1>
 
       </td>
     </tr>

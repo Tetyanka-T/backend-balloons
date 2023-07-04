@@ -84,6 +84,10 @@ const orderSchema = Schema(
       type: String,
       default: "новий",
     },
+    statusFinish: {
+      type: Boolean,
+      default: false,
+    },
   },
   { versionKey: false, timestamps: true }
 );
@@ -114,6 +118,9 @@ const orderSchema = Schema(
 const updateStatusJoiSchema = Joi.object({
   statusOrder: Joi.string().required(),
 });
+const updateStatusFinishJoiSchema = Joi.object({
+  statusFinish: Joi.boolean().required(),
+});
 
 const Order = model("order", orderSchema);
 
@@ -121,4 +128,5 @@ module.exports = {
   Order,
   // joiSchema,
   updateStatusJoiSchema,
+  updateStatusFinishJoiSchema
 };

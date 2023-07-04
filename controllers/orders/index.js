@@ -3,6 +3,7 @@ const getAll = require("./getAll");
 const addOrder = require("./addOrder");
 const deleteOrder = require("./deleteOrder");
 const updateStatus = require("./updateStatus");
+const updateStatusFinish = require("./updateStatusFinish");
 
 module.exports = {
   getAll,
@@ -10,4 +11,5 @@ module.exports = {
   addOrder,
   deleteOrder,
   updateStatus,
+  updateStatusFinish,
 };

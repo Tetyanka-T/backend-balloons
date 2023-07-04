@@ -1,7 +1,7 @@
 const { NotFound } = require("http-errors");
 const { Order } = require("../../models");
 const sendEmail = require("../../helpers/sendMail");
-const sendOrderEmail = require("../../helpers/email");
+const sendOrderEmail = require("../../helpers/adminEmail");
 
 const updateStatus = async (req, res) => {
   const { orderId } = req.params;
@@ -17,9 +17,8 @@ const updateStatus = async (req, res) => {
     throw new NotFound(`Order ${orderId} not found`);
   }
   const order = await Order.findById(orderId);
-  console.log(order);
   const email = {
-    to: order.userEmail,
+    to: "tetyana_tupalo@ukr.net",
     subject: `Нове замовлення №${order.numberOrder}`,
     html: sendOrderEmail(order),
   };

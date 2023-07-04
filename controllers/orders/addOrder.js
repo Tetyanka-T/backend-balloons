@@ -1,15 +1,14 @@
 const { Order } = require("../../models");
 const sendEmail = require("../../helpers/sendMail");
-const sendOrderUserEmail = require("../../helpers/userEmail");
+const sendOrderAdminEmail = require("../../helpers/adminEmail");
 
 const addOrder = async (req, res) => {
   const newOrder = req.body;
   const result = await Order.create(newOrder);
-
   const email = {
     to: "tetyana_tupalo@ukr.net",
     subject: `Нове замовлення №${result.numberOrder}`,
-    html: sendOrderUserEmail(result),
+    html: sendOrderAdminEmail(result),
   };
   await sendEmail(email);
   res.status(201).json({

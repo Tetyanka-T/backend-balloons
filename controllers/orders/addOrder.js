@@ -1,6 +1,6 @@
 const { Order } = require("../../models");
 const sendEmail = require("../../helpers/sendMail");
-const sendOrderEmail = require("../../helpers/email");
+const sendOrderUserEmail = require("../../helpers/userEmail");
 
 const addOrder = async (req, res) => {
   const newOrder = req.body;
@@ -9,7 +9,7 @@ const addOrder = async (req, res) => {
   const email = {
     to: "tetyana_tupalo@ukr.net",
     subject: `Нове замовлення №${result.numberOrder}`,
-    html: sendOrderEmail(result),
+    html: sendOrderUserEmail(result),
   };
   await sendEmail(email);
   res.status(201).json({

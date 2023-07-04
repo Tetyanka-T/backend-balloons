@@ -174,6 +174,7 @@ table, td { color: #7e8c8d; } #u_body a { color: #0000ee; text-decoration: under
 <p style="line-height: 140%;">Спосіб доставки: ${order.deliveryMethod}</p>
 <p style="line-height: 140%;">Дата свята: ${order.deliveryDate}</p>
 <p style="line-height: 140%;">Час доставки: ${order.deliveryTime}</p>
+<p style="line-height: 140%;">Ваш телефон: ${order.userPhone}</p>
 <p style="line-height: 140%;">Адреса доставки: ${order.userAddress} </p>
 <p style="line-height: 140%;">Коментарі до замовлення: ${order.comment}</p>
   </div>

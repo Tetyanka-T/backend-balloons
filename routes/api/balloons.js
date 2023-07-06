@@ -6,6 +6,12 @@ const { controllerWrapper, validation } = require("../../middlewares");
 const router = express.Router();
 
 router.get("/", controllerWrapper(ctrl.getAll));
+router.get("/gender-party", controllerWrapper(ctrl.getGenderParty));
+router.get("/birthday", controllerWrapper(ctrl.getBirthday));
+router.get("/baby", controllerWrapper(ctrl.getBaby));
+router.get("/photo-zone", controllerWrapper(ctrl.getphotoZone));
+router.get("/fasad", controllerWrapper(ctrl.getFasad));
+router.get("/thematic", controllerWrapper(ctrl.getThematic));
 
 router.get("/paginate", async (req, res) => {
   const { page, limit } = req.query;

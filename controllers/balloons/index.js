@@ -3,8 +3,13 @@ const getBalloonById = require("./getBalloonById");
 const addBalloon = require("./addBalloon");
 const deleteBalloon = require("./deleteBalloon");
 const updateById = require("./updateById");
-const updatePriceAll = require("./updatePriceAll");
 const paginatedResults = require("./paginatedResults");
+const getGenderParty = require("./getGenderParty");
+const getBirthday = require("./getBirthday");
+const getBaby = require("./getBaby");
+const getphotoZone = require("./getphotoZone");
+const getFasad = require("./getFasad");
+const getThematic = require("./getThematic");
 
 module.exports = {
   getAll,
@@ -12,6 +17,11 @@ module.exports = {
   addBalloon,
   deleteBalloon,
   updateById,
-  updatePriceAll,
   paginatedResults,
+  getGenderParty,
+  getBirthday,
+  getBaby,
+  getphotoZone,
+  getFasad,
+  getThematic,
 };

@@ -1,8 +1,7 @@
 const { Balloon } = require("../../models");
 
-const getAll = async (req, res) => {
+const getBirthday = async (req, res) => {
   const result = await Balloon.find({ category: "День народження" });
-  console.log(result);
   res.json({
     status: "success",
     code: 200,
@@ -10,4 +9,4 @@ const getAll = async (req, res) => {
   });
 };
 
-module.exports = getAll;
+module.exports = getBirthday;

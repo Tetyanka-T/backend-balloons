@@ -178,6 +178,7 @@ const sendOrderAdminEmail = (order) => {
   <p style="line-height: 140%;">Ваш email: ${order.userEmail}</p>
   <p style="line-height: 140%;">Адреса доставки: ${order.userAddress} </p>
   <p style="line-height: 140%;">Коментарі до замовлення: ${order.comment}</p>
+  <p style="line-height: 140%;">Передзвонити: ${order.callBack === true ? "ні" : "так"}</p>
     </div>
   
         </td>

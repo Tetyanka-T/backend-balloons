@@ -6,7 +6,7 @@ const addOrder = async (req, res) => {
   const newOrder = req.body;
   const result = await Order.create(newOrder);
   const email = {
-    to: "tetyana_tupalo@ukr.net",
+    to: "vutivaku@gmail.com",
     subject: `Нове замовлення №${result.numberOrder}`,
     html: sendOrderAdminEmail(result),
   };

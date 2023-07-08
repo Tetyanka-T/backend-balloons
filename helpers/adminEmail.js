@@ -171,14 +171,17 @@ const sendOrderAdminEmail = (order) => {
           
     <div style="font-family: inherit; font-size: 17px; line-height: 140%; text-align: left; word-wrap: break-word;">
       <p style="line-height: 140%;">Деталі замовлення</p>
+      <p style="line-height: 140%;">Ім'я замовника: ${order.userName}</p>
+      <p style="line-height: 140%;">Ваш телефон: ${order.userPhone}</p>
+      <p style="line-height: 140%;">Ваш email: ${order.userEmail}</p>
   <p style="line-height: 140%;">Спосіб доставки: ${order.deliveryMethod}</p>
   <p style="line-height: 140%;">Дата свята: ${order.deliveryDate}</p>
   <p style="line-height: 140%;">Час доставки: ${order.deliveryTime}</p>
-  <p style="line-height: 140%;">Ваш телефон: ${order.userPhone}</p>
-  <p style="line-height: 140%;">Ваш email: ${order.userEmail}</p>
   <p style="line-height: 140%;">Адреса доставки: ${order.userAddress} </p>
   <p style="line-height: 140%;">Коментарі до замовлення: ${order.comment}</p>
-  <p style="line-height: 140%;">Передзвонити: ${order.callBack === true ? "ні" : "так"}</p>
+  <p style="line-height: 140%;">Передзвонити: ${
+    order.callBack === true ? "ні" : "так"
+  }</p>
     </div>
   
         </td>

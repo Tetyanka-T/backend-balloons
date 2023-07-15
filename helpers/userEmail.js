@@ -156,7 +156,7 @@ table, td { color: #7e8c8d; } #u_body a { color: #0000ee; text-decoration: under
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
         
   <div style="font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="line-height: 140%;">Дякуємо за ваше замовлення в інтернет-магазині veselavutivka.com.ua</p>
+    <a href="https://www.veselavutivka.com.ua" target="_blanket" style="line-height: 140%;">Дякуємо за ваше замовлення в інтернет-магазині veselavutivka.com.ua</a>
   </div>
 
       </td>

@@ -4,6 +4,7 @@ const addOrder = require("./addOrder");
 const deleteOrder = require("./deleteOrder");
 const updateStatus = require("./updateStatus");
 const updateStatusFinish = require("./updateStatusFinish");
+const updateById = require("./updateById");
 
 module.exports = {
   getAll,
@@ -12,4 +13,5 @@ module.exports = {
   deleteOrder,
   updateStatus,
   updateStatusFinish,
+  updateById,
 };

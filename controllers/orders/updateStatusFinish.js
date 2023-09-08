@@ -1,5 +1,6 @@
 const { NotFound } = require("http-errors");
 const { Order } = require("../../models");
+const updateStatus = require("./updateStatus");
 
 const updateStatusFinish = async (req, res) => {
   const { orderId } = req.params;
@@ -11,6 +12,7 @@ const updateStatusFinish = async (req, res) => {
       new: true,
     }
   );
+
   if (!result) {
     throw new NotFound(`Order ${orderId} not found`);
   }

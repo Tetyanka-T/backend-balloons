@@ -29,6 +29,7 @@ router.patch(
   controllerWrapper(ctrl.updateStatus)
 );
 
+router.put("/:orderId", verifyToken, controllerWrapper(ctrl.updateById));
 router.patch(
   "/:orderId/statusFinish",
   verifyToken,

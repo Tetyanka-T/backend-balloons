@@ -33,7 +33,7 @@ router.put("/:orderId", verifyToken, controllerWrapper(ctrl.updateById));
 router.patch(
   "/:orderId/statusFinish",
   verifyToken,
-  validation(updateStatusFinishJoiSchema),
+  // validation(updateStatusFinishJoiSchema),
   controllerWrapper(ctrl.updateStatusFinish)
 );
 

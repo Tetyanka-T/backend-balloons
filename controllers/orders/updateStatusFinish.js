@@ -4,10 +4,12 @@ const updateStatus = require("./updateStatus");
 
 const updateStatusFinish = async (req, res) => {
   const { orderId } = req.params;
-  const { statusFinish } = req.body;
+  // const { statusFinish } = req.body;
+  const { statusOrder } = req.body;
   const result = await Order.findByIdAndUpdate(
     orderId,
-    { statusFinish },
+    // { statusFinish },
+    { statusOrder },
     {
       new: true,
     }

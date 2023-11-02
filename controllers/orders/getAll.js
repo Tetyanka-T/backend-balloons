@@ -1,7 +1,7 @@
 const { Order } = require("../../models");
 
 const getAll = async (req, res) => {
-  const result = await Order.find({});
+  const result = await Order.find({}).sort({ _id: -1 });
   res.json({
     status: "success",
     code: 200,
